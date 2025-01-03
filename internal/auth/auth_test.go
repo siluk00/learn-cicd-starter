@@ -16,7 +16,7 @@ func TestGetAPIKey(t *testing.T) {
 	get1, _ := GetAPIKey(header1)
 	get2, _ := GetAPIKey(header2)
 	want1 := "uahhe98hh98hjh"
-	want2 := "isuehiuhsa auhsiuehiuahs"
+	want2 := "isuehiuhsa auhsiuehiuahse"
 
 	if !reflect.DeepEqual(get1, want1) {
 		t.Fatalf("error1")
