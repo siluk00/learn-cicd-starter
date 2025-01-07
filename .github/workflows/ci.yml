@@ -26,6 +26,9 @@ jobs:
 
       - name: Gosec Check
         run: gosec ./...
+        
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
 
   style:
     name: Style
@@ -35,8 +38,7 @@ jobs:
       - name: Check Formatting
         run: test -z $(go fmt ./...)
         
-      - name: Install staticcheck
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+     
 
       - name: Static Check 
-        run: test -z $(staticcheck ./...)  
+        run: staticcheck ./...  
