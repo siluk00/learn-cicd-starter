@@ -35,3 +35,7 @@ func respondWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 		return
 	}
 }
+
+func notused() {
+
+}
