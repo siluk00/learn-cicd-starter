@@ -41,10 +41,10 @@ jobs:
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-447122/notely-ar-repo/notely:latest .
 
       - name: Make migration script executable
-        run: chmod +x ./scripts/migrateupSQL.sh
+        run: chmod +x ./scripts/migrateup.sh
 
       - name: 'Run goose migrations'
-        run: ./scripts/migrateupSQL.sh
+        run: ./scripts/migrateup.sh
 
       - name: Deploy to Cloud Run
         run: gcloud run deploy notely --image us-central1-docker.pkg.dev/notely-447122/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project notely-447122 --max-instances=4
